@@ -54,7 +54,8 @@ function removebook(id) { // eslint-disable-line no-unused-vars
           id: (book.id - 1),
           title: book.title,
           author: book.author,
-        }); 
+        }
+        );
       }
       else {
         temp.push(book);
@@ -62,8 +63,9 @@ function removebook(id) { // eslint-disable-line no-unused-vars
     }
     else {
       update = true;
-    } 
-  });
+    }
+  }
+  );
   books = temp;
   updateLocalStorage(true);
 }
