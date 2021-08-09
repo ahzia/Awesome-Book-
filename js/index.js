@@ -1,13 +1,37 @@
 let books=[{
-    id:0,
-    title:"new Book JS",
+    id:1,
+    title:"new Book JS 1",
     author:"new author"
 },{
-    id:1,
-    title:"new Book",
+  id:2,
+  title:"new Book JS 2",
+  author:"new author"
+},
+{
+  id:0,
+    title:"new Book 0",
     author:"new author"
-}];
-function displayBook(){
+},
+{
+  id:3,
+  title:"new Book JS 3",
+  author:"new author"
+},
+];
+function sortBooks(){
+  books.sort((bookA, bookB) => {
+
+    if (bookA.id < bookB.id) {
+      return 1;
+    }
+    if (bookA.id> bookB.id) {
+      return -1;
+    }
+    return 0;
+  });
+}
+function displayBooks(){
+        sortBooks();
         const section = document.getElementById('collection');
         const list = document.createElement('ul');
         list.id = 'list';
@@ -32,23 +56,14 @@ function displayBook(){
 function addBook() {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-
   const id = books.length;
   const book = {id, title, author};
-
   books.push(book);
-  displayBook();  
-
-  // const date = new Date();
-  // const id = date.getMilliseconds();
-  // console.log(id);
-
+  displayBooks();
 }
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    displayBook();
+    displayBooks();
     const addbutton = document.getElementById('btnAdd');
     addbutton.addEventListener('click', (event) => {
       event.preventDefault();
