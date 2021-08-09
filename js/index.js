@@ -10,18 +10,6 @@ function sortBooks() {
     return 0;
   });
 }
-function updateLocalStorage(remove) {
-  if (!remove) {
-    if (books === null) {
-      books = JSON.parse(window.localStorage.getItem('books'));
-    }
-  }
-  window.localStorage.setItem('books', JSON.stringify(books));
-  if (books === null) {
-    books = [];  
-  }
-  displayBooks();
-}
 function displayBooks() {
   sortBooks();
   const section = document.getElementById('collection');
@@ -44,26 +32,36 @@ function displayBooks() {
   section.innerHTML = '';
   section.appendChild(list);
 }
-function removebook(id) {
-  let temp=[]
-  let update=false;
+function updateLocalStorage(remove) {
+  if (!remove) {
+    if (books === null) {
+      books = JSON.parse(window.localStorage.getItem('books'));
+    }
+  }
+  window.localStorage.setItem('books', JSON.stringify(books));
+  if (books === null) {
+    books = [];
+  }
+  displayBooks();
+}
+function removebook(id) { // eslint-disable-line no-unused-vars
+  const temp = [];
+  let update = false;
   books.forEach((book) => {
-    if (book.id != id){
-      if (!update){
+    if (book.id !== id) {
+      if (!update) {
         temp.push({
-          id: (book.id-1),
+          id: (book.id - 1),
           title: book.title,
-          author: book.author
-        })
-      }
+          author: book.author,
+        });}
       else {
         temp.push(book);
       }
     }
     else {
       update = true;
-    }
-  })
+    }});
   books = temp;
   updateLocalStorage(true);
 }
@@ -71,16 +69,16 @@ function addBook() {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   let id;
-  const book = {id, title, author};
+  const book = { id, title, author };
   books.push(book);
   updateLocalStorage(false);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   updateLocalStorage(false);
-    const addbutton = document.getElementById('btnAdd');
-    addbutton.addEventListener('click', (event) => {
-      event.preventDefault();
-      addBook();
-    });
+  const addbutton = document.getElementById('btnAdd');
+  addbutton.addEventListener('click', (event) => {
+    event.preventDefault();
+    addBook();
+  });
 });
