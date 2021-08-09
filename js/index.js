@@ -1,23 +1,4 @@
-let books=[{
-    id:1,
-    title:"new Book JS 1",
-    author:"new author"
-},{
-  id:2,
-  title:"new Book JS 2",
-  author:"new author"
-},
-{
-  id:0,
-    title:"new Book 0",
-    author:"new author"
-},
-{
-  id:3,
-  title:"new Book JS 3",
-  author:"new author"
-},
-];
+let books=null; 
 function sortBooks(){
   books.sort((bookA, bookB) => {
 
@@ -29,6 +10,18 @@ function sortBooks(){
     }
     return 0;
   });
+}
+function updateLocalStorage(remove) {
+  if (!remove) {
+    if (books === null) {
+      books = JSON.parse(window.localStorage.getItem('books'));
+    }
+  }
+  window.localStorage.setItem('books', JSON.stringify(books));
+  if(books===null){
+    books=[];   
+  }
+  displayBooks();
 }
 function displayBooks(){
         sortBooks();
@@ -50,20 +43,40 @@ function displayBooks(){
           list.insertAdjacentHTML('beforeend', bookCard);
         });
         section.innerHTML = '';
-        section.appendChild(list);
+        section.appendChild(list);}
+function removebook(id){
+  let temp=[]
+  let update=false;
+  books.forEach((book) =>{
+    if(book.id!=id){
+      if(!update){
+      temp.push({
+        id:(book.id-1),
+        title:book.title,
+        author:book.author
+      })}
+      else{
+      temp.push(book);
+      }
+    }
+    else{
+      update=true;
+    }
+  })
+  books=temp;
+  updateLocalStorage(true);
 }
-
 function addBook() {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-  const id = books.length;
+  let id;
   const book = {id, title, author};
   books.push(book);
-  displayBooks();
+  updateLocalStorage(false);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    displayBooks();
+  updateLocalStorage(false);
     const addbutton = document.getElementById('btnAdd');
     addbutton.addEventListener('click', (event) => {
       event.preventDefault();
