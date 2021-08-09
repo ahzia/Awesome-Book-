@@ -1,6 +1,6 @@
 let books=[{
     id:0,
-    title:"new Book",
+    title:"new Book JS",
     author:"new author"
 },{
     id:1,
@@ -29,6 +29,29 @@ function displayBook(){
         section.appendChild(list);
 }
 
+function addBook() {
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+
+  const id = books.length;
+  const book = {id, title, author};
+
+  books.push(book);
+  displayBook();  
+
+  // const date = new Date();
+  // const id = date.getMilliseconds();
+  // console.log(id);
+
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     displayBook();
+    const addbutton = document.getElementById('btnAdd');
+    addbutton.addEventListener('click', (event) => {
+      event.preventDefault();
+      addBook();
+    });
 });
