@@ -1,11 +1,10 @@
-let books=null; 
-function sortBooks(){
+let books = null;
+function sortBooks() {
   books.sort((bookA, bookB) => {
-
     if (bookA.id < bookB.id) {
       return 1;
     }
-    if (bookA.id> bookB.id) {
+    if (bookA.id > bookB.id) {
       return -1;
     }
     return 0;
@@ -18,52 +17,54 @@ function updateLocalStorage(remove) {
     }
   }
   window.localStorage.setItem('books', JSON.stringify(books));
-  if(books===null){
-    books=[];   
+  if (books === null) {
+    books = [];  
   }
   displayBooks();
 }
-function displayBooks(){
-        sortBooks();
-        const section = document.getElementById('collection');
-        const list = document.createElement('ul');
-        list.id = 'list';
-        books.forEach((book) => {
-          const { title } = book; //const title=book.title
-          const { id } = book;
-          const liId = `li${title}`; ///newbook => liId=linewBook
-          const bookCard = `<li id=${liId} class= "booklist" >
-            <div class="text">
-            <p>"${book.title}" by</p>
-            <p>${book.author}</p>
-            </div>
-            <button id=${id} onclick="removebook(${id})" class="remove">Remove</button>
-            </li>
-            <hr>`;
-          list.insertAdjacentHTML('beforeend', bookCard);
-        });
-        section.innerHTML = '';
-        section.appendChild(list);}
-function removebook(id){
+function displayBooks() {
+  sortBooks();
+  const section = document.getElementById('collection');
+  const list = document.createElement('ul');
+  list.id = 'list';
+  books.forEach((book) => {
+    const { title } = book;
+    const { id } = book;
+    const liId = `li${title}`;
+    const bookCard = `<li id=${liId} class= "booklist" >
+      <div class="text">
+      <p>"${book.title}" by</p>
+      <p>${book.author}</p>
+      </div>
+      <button id=${id} onclick="removebook(${id})" class="remove">Remove</button>
+      </li>
+      <hr>`;
+    list.insertAdjacentHTML('beforeend', bookCard);
+  });
+  section.innerHTML = '';
+  section.appendChild(list);
+}
+function removebook(id) {
   let temp=[]
   let update=false;
-  books.forEach((book) =>{
-    if(book.id!=id){
-      if(!update){
-      temp.push({
-        id:(book.id-1),
-        title:book.title,
-        author:book.author
-      })}
-      else{
-      temp.push(book);
+  books.forEach((book) => {
+    if (book.id != id){
+      if (!update){
+        temp.push({
+          id: (book.id-1),
+          title: book.title,
+          author: book.author
+        })
+      }
+      else {
+        temp.push(book);
       }
     }
-    else{
-      update=true;
+    else {
+      update = true;
     }
   })
-  books=temp;
+  books = temp;
   updateLocalStorage(true);
 }
 function addBook() {
