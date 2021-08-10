@@ -1,4 +1,4 @@
-import { Books } from './books.js';
+import Books  from './books.js';
 
 let newBooks = new Books();
 

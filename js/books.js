@@ -1,4 +1,4 @@
-export class Books {
+export default class Books {
   constructor() {
     this.books = null;
   }
@@ -28,7 +28,7 @@ export class Books {
     });
   }
 
-  resetInputs() {
+  resetInputs = () => {
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     document.getElementById('error').innerHTML = '';
@@ -76,7 +76,7 @@ export class Books {
     const temp = [];
     let update = false;
     this.books.forEach((book) => {
-      if (book.id != id) {
+      if (book.id != id) { // eslint-eqeqeq
         if (!update) {
           temp.push({
             id: (book.id - 1),
@@ -99,9 +99,9 @@ export class Books {
     const author = document.getElementById('author').value;
     let status = false;
     this.books.forEach((book) => {
-      if(book.title === title && book.author === author) {
+      if (book.title === title && book.author === author) {
         const error = document.getElementById('error');
-        error.innerHTML = `Alert: Book already exists in your list`;
+        error.innerHTML = 'Alert: Book already exists in your list';
         status = true;
       }
     });
