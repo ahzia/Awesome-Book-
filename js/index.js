@@ -1,6 +1,6 @@
-import Books  from './books.js';
+import Books from './books.js';
 
-let newBooks = new Books();
+const newBooks = new Books();
 
 document.addEventListener('DOMContentLoaded', () => {
   newBooks.updateLocalStorage(false);
