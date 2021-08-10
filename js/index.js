@@ -33,6 +33,7 @@ function displayBooks() {
   section.appendChild(list);
 }
 function updateLocalStorage(remove) {
+  console.log(books);
   if (!remove) {
     if (books === null) {
       books = JSON.parse(window.localStorage.getItem('books'));
@@ -45,6 +46,7 @@ function updateLocalStorage(remove) {
   displayBooks();
 }
 function removebook(id) { // eslint-disable-line no-unused-vars
+  console.log(id);
   const temp = [];
   let update = false;
   books.forEach((book) => {
@@ -68,7 +70,7 @@ function removebook(id) { // eslint-disable-line no-unused-vars
 function addBook() {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-  let id;
+  let id = books.length;
   const book = { id, title, author };
   books.push(book);
   updateLocalStorage(false);
