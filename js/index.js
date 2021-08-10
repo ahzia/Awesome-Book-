@@ -54,18 +54,14 @@ function removebook(id) { // eslint-disable-line no-unused-vars
           id: (book.id - 1),
           title: book.title,
           author: book.author,
-        }
-        );
-      }
-      else {
+        });
+      } else {
         temp.push(book);
       }
-    }
-    else {
+    } else {
       update = true;
     }
-  }
-  );
+  });
   books = temp;
   updateLocalStorage(true);
 }
