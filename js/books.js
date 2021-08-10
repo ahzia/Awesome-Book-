@@ -1,16 +1,17 @@
 export class books {
   constructor() {
-   this.books=null;   
+    this.books = null;
   }
+
   eventListeners() {
     const removeBtn = document.querySelectorAll('.remove');
     removeBtn.forEach((btn) => {
       btn.onclick = (event) => {
-      const { target } = event;
-      const { id } = target;
-      const bookId = (id).replace('btn', '');
-      this.removebook(bookId);
-      // console.log(bookId);
+        const { target } = event;
+        const { id } = target;
+        const bookId = (id).replace('btn', '');
+        this.removebook(bookId);
+        // console.log(bookId);
       };
     });
   }
@@ -54,8 +55,9 @@ export class books {
     });
     section.innerHTML = '';
     section.appendChild(list);
-    this.resetInputs()
+    this.resetInputs();
   }
+
   updateLocalStorage(remove) {
     if (!remove) {
       if (this.books === null) {
@@ -75,7 +77,6 @@ export class books {
     let update = false;
     this.books.forEach((book) => {
       if (book.id != id) {
-          console.log(book.id+" "+id)
         if (!update) {
           temp.push({
             id: (book.id - 1),
@@ -96,7 +97,6 @@ export class books {
   addBook() {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
-  
     let status = false;
     this.books.forEach(book => {
       if(book.title == title && book.author == author) {
@@ -106,11 +106,10 @@ export class books {
       }
     });
     if (!status){
-    let id = this.books.length;
-    console.log(id);
-    const book = { id, title, author };
-    this.books.push(book);
-    this.updateLocalStorage(false);
+      let id = this.books.length;
+      const book = { id, title, author };
+      this.books.push(book);
+      this.updateLocalStorage(false);
   }
   }
 }

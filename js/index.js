@@ -1,4 +1,4 @@
-import {books} from './books.js';
+import { books } from './books.js';
 
 let newBooks = new books();
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function removebook(id) {
   newBooks.removebook(id);
-}
 
-const user = removebooks('');
-user = 0;
+
