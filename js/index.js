@@ -1,7 +1,5 @@
 import {books} from './books.js';
-function removebook(id){
-  newBooks.removebook(id);
-}
+
 let newBooks = new books();
 document.addEventListener('DOMContentLoaded', () => {
   newBooks.updateLocalStorage(false);
@@ -11,3 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     newBooks.addBook();
   });
 });
+
+function removebook(id) {
+  newBooks.removebook(id);
+}
+
+const user = removebooks('');
+user = 0;
