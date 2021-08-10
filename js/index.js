@@ -1,6 +1,7 @@
-import { books } from './books.js';
+import { Books } from './books.js';
 
-let newBooks = new books();
+let newBooks = new Books();
+
 document.addEventListener('DOMContentLoaded', () => {
   newBooks.updateLocalStorage(false);
   const addbutton = document.getElementById('btnAdd');
@@ -9,7 +10,3 @@ document.addEventListener('DOMContentLoaded', () => {
     newBooks.addBook();
   });
 });
-
-  newBooks.removebook(id);
-
-

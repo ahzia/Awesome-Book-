@@ -1,4 +1,4 @@
-export class books {
+export class Books {
   constructor() {
     this.books = null;
   }
@@ -98,18 +98,18 @@ export class books {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     let status = false;
-    this.books.forEach(book => {
-      if(book.title == title && book.author == author) {
-        const error =document.getElementById('error');
-        error.innerHTML =`Alert: Book already exists in your list`;
+    this.books.forEach((book) => {
+      if(book.title === title && book.author === author) {
+        const error = document.getElementById('error');
+        error.innerHTML = `Alert: Book already exists in your list`;
         status = true;
       }
     });
-    if (!status){
-      let id = this.books.length;
+    if (!status) {
+      const id = this.books.length;
       const book = { id, title, author };
       this.books.push(book);
       this.updateLocalStorage(false);
-  }
+    }
   }
 }
