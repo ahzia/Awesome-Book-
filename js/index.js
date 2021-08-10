@@ -33,7 +33,6 @@ function displayBooks() {
   section.appendChild(list);
 }
 function updateLocalStorage(remove) {
-  console.log(books);
   if (!remove) {
     if (books === null) {
       books = JSON.parse(window.localStorage.getItem('books'));
@@ -46,7 +45,6 @@ function updateLocalStorage(remove) {
   displayBooks();
 }
 function removebook(id) { // eslint-disable-line no-unused-vars
-  console.log(id);
   const temp = [];
   let update = false;
   books.forEach((book) => {
@@ -70,10 +68,21 @@ function removebook(id) { // eslint-disable-line no-unused-vars
 function addBook() {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
+
+  let status = false;
+  books.forEach(book => {
+    if(book.title == title && book.author == author) {
+      const error =document.getElementById('error');
+      error.innerHTML =`Alert: Book already exists in your list`;
+      status = true;
+    }
+  });
+  if (!status){
   let id = books.length;
   const book = { id, title, author };
   books.push(book);
   updateLocalStorage(false);
+}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
