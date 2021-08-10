@@ -10,6 +10,12 @@ function sortBooks() {
     return 0;
   });
 }
+function resetInputs() {
+  document.getElementById('title').value = "";
+  document.getElementById('author').value = "";
+  document.getElementById('error').innerHTML = "";
+}
+
 function displayBooks() {
   sortBooks();
   const section = document.getElementById('collection');
@@ -31,6 +37,7 @@ function displayBooks() {
   });
   section.innerHTML = '';
   section.appendChild(list);
+  resetInputs()
 }
 function updateLocalStorage(remove) {
   if (!remove) {
