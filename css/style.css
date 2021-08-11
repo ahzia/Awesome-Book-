@@ -1,3 +1,59 @@
 body {
-  font-size: 14px;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background-size: 100vh; */
+  background-repeat: no-repeat;
+  background-size: 100vw 1020px;
+}
+
+.heading-container {
+  width: 80%;
+  margin-inline: auto;
+  text-align: center;
+  color: rgb(241, 238, 238);
+  font-weight: 800;
+}
+
+.reading-collection {
+  width: 80%;
+  margin-inline: auto;
+  background-color: rgb(241, 238, 238, 0.9);
+  animation-name: slide-in;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slide-in {
+  0% {
+    position: relative;
+    right: 500px;
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  /* 50% {
+    postion: relative;
+    right: 250px;
+    transform: scale(1.25x);
+    opacity: 0.75;
+  } */
+  100% {
+    position: relative;
+    right: 0;
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+.input-section {
+  width: 80%;
+  margin: 1rem auto
+}
+
+input {
+  display: block;
+  margin-block: 0.5rem;
+  margin-inline: auto;
+  border: 1px solid black;
 }
