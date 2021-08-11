@@ -51,9 +51,30 @@ body {
   margin: 1rem auto
 }
 
-input {
+.input-author, .input-title{
+  width: 60%;
   display: block;
   margin-block: 0.5rem;
   margin-inline: auto;
+  height: 2rem;
   border: 1px solid black;
+  border-radius: 4px;
+}
+
+input::placeholder {
+  padding: 2%;
+}
+
+.input-author:hover, .input-title:hover {
+  transform: scale(1.1);
+  border: 1.5px ;
+  box-shadow: .2rem .2rem 0 #686a6b;
+}
+
+#btnAdd {
+  width: 30%;
+  display: block;
+  margin-inline: auto;
+  text-align: center;
+  border: 2px solid black;
 }
