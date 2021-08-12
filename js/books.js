@@ -11,7 +11,6 @@ export default class Books {
         const { id } = target;
         const bookId = (id).replace('btn', '');
         this.removebook(bookId);
-        // console.log(bookId);
       };
     });
   }
@@ -39,16 +38,24 @@ export default class Books {
     const section = document.getElementById('collection');
     const list = document.createElement('ul');
     list.id = 'list';
+    let odd = false;
     this.books.forEach((book) => {
+      let oddOrEven = 'li-odd';
+      if (odd === false) {
+        oddOrEven = 'li-even';
+        odd = true;
+      } else {
+        odd = false;
+      }
       const { title } = book;
       const { id } = book;
       const liId = `li${title}`;
-      const bookCard = `<li id=${liId} class= "booklist" >
+      const bookCard = `<li id=${liId} class= "booklist ${oddOrEven}" >
         <div class="text">
         <p>"${book.title}" by</p>
-        <p>${book.author}</p>
+        <p>: ${book.author}</p>
         </div>
-        <button id="btn${id}" class="remove">Remove</button>
+        <button id="btn${id}" class="remove button">Remove</button>
         </li>
         <hr>`;
       list.insertAdjacentHTML('beforeend', bookCard);
@@ -97,19 +104,23 @@ export default class Books {
   addBook() {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
+    const error = document.getElementById('error');
     let status = false;
-    this.books.forEach((book) => {
-      if (book.title === title && book.author === author) {
-        const error = document.getElementById('error');
-        error.innerHTML = 'Alert: Book already exists in your list';
-        status = true;
+    if (title === '') {
+      error.innerHTML = 'title is Required';
+    } else {
+      this.books.forEach((book) => {
+        if (book.title === title && book.author === author) {
+          error.innerHTML = 'Alert: Book already exists in your list';
+          status = true;
+        }
+      });
+      if (!status) {
+        const id = this.books.length;
+        const book = { id, title, author };
+        this.books.push(book);
+        this.updateLocalStorage(false);
       }
-    });
-    if (!status) {
-      const id = this.books.length;
-      const book = { id, title, author };
-      this.books.push(book);
-      this.updateLocalStorage(false);
     }
   }
 }

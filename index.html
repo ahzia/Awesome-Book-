@@ -9,11 +9,16 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="collection" class="collection"></div>
-    <input id="title">
-    <input id="author">
-    <input type="submit" id="btnAdd">
-    <p class="error-message" id="error"></p>
+    <div class="heading-container">
+        <h2>Your Reading List:</h2>
+    </div>
+    <div id="collection" class="reading-collection"></div>
+    <div class="input-section"> 
+        <input id="title" class="input-title" placeholder="Book Title">
+        <input id="author" class="input-author" placeholder="Book Author">
+        <input type="submit" id="btnAdd" class="button">
+        <p class="error-message" id="error"></p>
+    </div>
     <script src="./js/index.js" type="module"></script>
 </body>
 </html>
