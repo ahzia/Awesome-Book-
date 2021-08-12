@@ -102,3 +102,9 @@ ul {
   background-color: rgba(83, 63, 63, 0.9);
   color: white;
 }
+
+.error-message{
+  font-size:20px;
+  display: flex;
+  justify-content: center;
+}
