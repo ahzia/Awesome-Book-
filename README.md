@@ -26,11 +26,11 @@
 
 If you want to visit the deployed app just visit the following link:
 
-- [`https://ahzia.github.io/`](https://ahzia.github.io/)
+- [`https://ahzia.github.io/Awesome-Book-/`](https://ahzia.github.io/Awesome-Book-/)
 
 If you want a copy of this file go to the github repository and download it
 
-- [`git clone https://github.com/ahzia/`](https://github.com/ahzia/)
+- [`git clone https://github.com/ahzia/Awesome-Book-`](https://github.com/ahzia/Awesome-Book-)
 
 After cloning it you can see the project opening the index.html file with your favorite browser ( Firefox for example )
 
