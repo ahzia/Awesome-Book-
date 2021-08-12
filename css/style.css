@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  /* background-size: 100vh; */
   background-repeat: no-repeat;
   background-size: 100vw 1020px;
 }
@@ -31,6 +30,7 @@ body {
     transform: scale(1.5);
     opacity: 0.5;
   }
+  
   100% {
     position: relative;
     right: 0;
@@ -41,7 +41,7 @@ body {
 
 .input-section {
   width: 80%;
-  margin: 1rem auto
+  margin: 1rem auto;
 }
 
 .input-author,
@@ -63,7 +63,7 @@ input::placeholder {
 .input-title:hover {
   transform: scale(1.1);
   border: 1.5px;
-  box-shadow: .2rem .2rem 0 #686a6b;
+  box-shadow: 0.2rem 0.2rem 0 #686a6b;
 }
 
 #btnAdd {
@@ -103,8 +103,8 @@ ul {
   color: white;
 }
 
-.error-message{
-  font-size:20px;
+.error-message {
+  font-size: 20px;
   display: flex;
   justify-content: center;
 }
