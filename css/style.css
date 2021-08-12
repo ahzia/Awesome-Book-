@@ -7,6 +7,26 @@ body {
   background-size: 100vw 1020px;
 }
 
+h1 {
+  color: rgb(241, 238, 238);
+}
+
+.nav-section {
+  padding-inline: 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar {
+  display: flex;
+}
+
+.nav-list {
+  color: rgb(241, 238, 238);
+  text-decoration: none;
+}
+
 .heading-container {
   width: 80%;
   margin-inline: auto;
