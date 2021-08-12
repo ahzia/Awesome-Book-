@@ -19,7 +19,6 @@ body {
 .reading-collection {
   width: 80%;
   margin-inline: auto;
-  background-color: rgb(241, 238, 238, 0.9);
   animation-name: slide-in;
   animation-duration: 2s;
   animation-timing-function: ease-out;
@@ -32,12 +31,6 @@ body {
     transform: scale(1.5);
     opacity: 0.5;
   }
-  /* 50% {
-    postion: relative;
-    right: 250px;
-    transform: scale(1.25x);
-    opacity: 0.75;
-  } */
   100% {
     position: relative;
     right: 0;
@@ -51,7 +44,8 @@ body {
   margin: 1rem auto
 }
 
-.input-author, .input-title{
+.input-author,
+.input-title {
   width: 60%;
   display: block;
   margin-block: 0.5rem;
@@ -65,9 +59,10 @@ input::placeholder {
   padding: 2%;
 }
 
-.input-author:hover, .input-title:hover {
+.input-author:hover,
+.input-title:hover {
   transform: scale(1.1);
-  border: 1.5px ;
+  border: 1.5px;
   box-shadow: .2rem .2rem 0 #686a6b;
 }
 
@@ -77,4 +72,33 @@ input::placeholder {
   margin-inline: auto;
   text-align: center;
   border: 2px solid black;
+}
+
+ul {
+  list-style: none;
+}
+
+.text {
+  display: flex;
+}
+
+.booklist {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+  align-items: center;
+  background-color: rgb(241, 238, 238, 0.9);
+}
+
+.button {
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #e73c7e;
+}
+
+.li-odd {
+  background-color: rgba(83, 63, 63, 0.9);
+  color: white;
 }
