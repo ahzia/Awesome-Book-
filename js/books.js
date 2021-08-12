@@ -44,7 +44,7 @@ export default class Books {
       if (odd === false) {
         oddOrEven = 'li-even';
         odd = true;
-      } else{
+      } else {
         odd = false;
       }
       const { title } = book;
@@ -106,21 +106,21 @@ export default class Books {
     const author = document.getElementById('author').value;
     const error = document.getElementById('error');
     let status = false;
-    if(title=="") {
+    if (title === '') {
       error.innerHTML = 'title is Required';
     } else {
-    this.books.forEach((book) => {
-      if (book.title === title && book.author === author) {
-        error.innerHTML = 'Alert: Book already exists in your list';
-        status = true;
+      this.books.forEach((book) => {
+        if (book.title === title && book.author === author) {
+          error.innerHTML = 'Alert: Book already exists in your list';
+          status = true;
+        }
+      });
+      if (!status) {
+        const id = this.books.length;
+        const book = { id, title, author };
+        this.books.push(book);
+        this.updateLocalStorage(false);
       }
-    });
-    if (!status) {
-      const id = this.books.length;
-      const book = { id, title, author };
-      this.books.push(book);
-      this.updateLocalStorage(false);
     }
-  }
   }
 }

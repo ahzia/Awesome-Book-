@@ -30,7 +30,7 @@ body {
     transform: scale(1.5);
     opacity: 0.5;
   }
-  
+
   100% {
     position: relative;
     right: 0;
