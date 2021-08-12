@@ -49,11 +49,11 @@ After cloning it you can see the project opening the index.html file with your f
 - Twitter: [@ZiaYousofi](https://twitter.com/ZiaYousofi)
 - LinkedIn: [Ahmad zia Yousufi](https://www.linkedin.com/in/ah-ziayosfi)
 
-👤 **Author 2**
+👤 **Faizan Zahid**
 
-- GitHub: [@m](https://github.com/)
-- Twitter: [@m](https://twitter.com/)
-- LinkedIn: [](https://www.linkedin.com/in/)
+- GitHub: [@faizi2500](https://github.com/faizi2500)
+- Twitter: [@Faizy_250](https://twitter.com/Faizy_250)
+- LinkedIn: [Faizan Zahid](https://www.linkedin.com/in/faizan2500/)
 
 =======
 
