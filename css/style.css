@@ -40,7 +40,7 @@ h1 {
   color: palevioletred;
   text-decoration: none;
   margin-inline: 20px;
-}
+} 
 
 .heading-container {
   width: 80%;
@@ -167,7 +167,12 @@ a.active-tab {
 }
 
 .date {
-  margin-inline: auto;
+  width: 90%;
+  margin: 1% auto;
+  text-align:right;
+  font-size: 1.1rem;
+  color: rgb(241, 238, 238);
+  font-weight: 800;
 }
 
 footer {
