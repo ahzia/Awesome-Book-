@@ -32,7 +32,7 @@ h1 {
 }
 
 .nav-list {
-  text-align: center ;
+  text-align: center;
   color: palevioletred;
   text-decoration: none;
   margin-inline: 20px;
@@ -61,7 +61,6 @@ h1 {
     transform: scale(1.5);
     opacity: 0.5;
   }
-
   100% {
     position: relative;
     right: 0;
@@ -161,12 +160,30 @@ a.active-tab {
   color: palevioletred;
 }
 
+.date {
+  margin-inline: auto;
+}
+
+footer {
+  width: 80%;
+  margin-inline: auto;
+  text-align: center;
+  color: rgb(241, 238, 238);
+  font-weight: 800;
+}
+
+.section {
+  margin-inline: auto;
+  text-align: center;
+  color: rgb(241, 238, 238);
+  font-weight: 800;
+}
+
 @media only screen and (min-width: 768px) {
   h1 {
     color: rgb(241, 238, 238);
     font-size: 1.5rem;
   }
-  
   .nav-section {
     padding-inline: 3%;
     display: flex;
@@ -174,7 +191,6 @@ a.active-tab {
     align-items: center;
     background-color: palevioletred;
   }
-  
   .nav-bar {
     display: flex;
     flex-direction: row;
@@ -183,7 +199,6 @@ a.active-tab {
     position: unset;
     background-color: transparent;
   }
-  
   .nav-list {
     color: rgb(241, 238, 238);
     text-decoration: none;
@@ -191,23 +206,19 @@ a.active-tab {
     display: block;
     padding: 5px 8px;
   }
-
   .nav-list:hover {
     text-decoration: underline;
     padding: 5px 8px;
     background-color: rgb(241, 238, 238);
     color: palevioletred;
   }
-  
   .hamburger {
     display: none;
   }
   .fa-bars {
     display: none;
   }
-
   .heading-container {
     margin-top: 7.5%;
   }
-   
 }
