@@ -1,5 +1,11 @@
 import Books from './books.js';
 
+function assignDate() {
+  const DateTime = luxon.DateTime.now();
+  let Date = DateTime.year + "-" + DateTime.month + "-"+DateTime.day;
+  document.getElementById("date").innerHTML = Date;
+}
+
 const newBooks = new Books();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,11 +27,9 @@ function Tabs() {
 
   var clear = function() {
     var menuElements = document.querySelectorAll('[data-tab]');
-    console.log(menuElements);
     for(var i = 0; i < menuElements.length ; i++) {
       menuElements[i].classList.remove('active-tab');
       var id = menuElements[i].getAttribute('data-tab');
-      console.log( document.getElementById(id));
       document.getElementById(id).classList.remove('active-tab');
     }
   }
@@ -41,3 +45,4 @@ function Tabs() {
 }
 
 var connectTabs = new Tabs();
+assignDate();
