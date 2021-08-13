@@ -9,29 +9,50 @@
     <title>Book Tracker</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <header class="nav-section">
         <!-- <div></div> -->
         <div class="nav-logo" id="logo">
             <h1>Awesome Books</h1>
         </div>
-        <nav class="nav-bar" id= "navigation">
-            <h3><a href="#" class="nav-list">List</a></h3>
-            <h3><a href="#" class="nav-list">Add New</a></h3>
-            <h3><a href="#" class="nav-list">Contact</a></h3>
+        <nav class="nav-bar" id="navigation">
+            <h3><a href="#" class="nav-list active-tab" data-tab="index">List</a></h3>
+            <h3><a href="#" class="nav-list" data-tab="add_book">Add New</a></h3>
+            <h3><a href="#" class="nav-list" data-tab="contact">Contact</a></h3>
         </nav>
     </header>
-
-    <div class="heading-container">
-        <h2>Your Reading List:</h2>
-    </div>
-    <div id="collection" class="reading-collection"></div>
-    <div class="input-section"> 
-        <input id="title" class="input-title" placeholder="Book Title">
-        <input id="author" class="input-author" placeholder="Book Author">
-        <input type="submit" id="btnAdd" class="button">
-        <p class="error-message" id="error"></p>
-    </div>
+    <main>
+        <section id="index" class="section b-tab active-tab" aria-label="section">
+            <div class="heading-container">
+                <h2>Your Reading List:</h2>
+            </div>
+            <div id="collection" class="reading-collection"></div>
+        </section>
+        <section id="add_book" class="section b-tab" aria-label="section">
+            <div class="input-section">
+                <input id="title" class="input-title" placeholder="Book Title">
+                <input id="author" class="input-author" placeholder="Book Author">
+                <input type="submit" id="btnAdd" class="button">
+                <p class="error-message" id="error"></p>
+            </div>
+        </section>
+        <section id="contact" class="section b-tab" aria-label="section">
+            <h1 class="title">Contact information</h1>
+            <div class="contact-text"></div>
+            <p>Do you have any questions or you just want to say "Hello"?</p>
+            <p>You can reach out to us!</p>
+            <ul class="contact-list">
+                <li>Our e-mail: mail@mail.com</li>
+                <li>Our phone number: 00435866534422</li>
+                <li>Our address Streetname 22, 84503 City, Country</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        Copyright 2021 - Waldenberg Incorporated TM - Created by Ahmad Zia Yousufi & Abraham Rodriguez
+    </footer>
     <script src="./js/index.js" type="module"></script>
 </body>
+
 </html>
