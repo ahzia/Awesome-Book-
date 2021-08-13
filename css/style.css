@@ -7,6 +7,41 @@ body {
   background-size: 100vw 1020px;
 }
 
+.section {
+  margin-inline: auto;
+  text-align: center;
+  color: rgb(241, 238, 238);
+  font-weight: 800;
+}
+
+h1 {
+  color: rgb(241, 238, 238);
+  font-size: 1.5rem;
+}
+
+.nav-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: palevioletred;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  align-items: center;
+}
+
+.nav-list {
+  text-align: center;
+  color: palevioletred;
+  text-decoration: none;
+  margin-inline: 20px;
+}
+
 .heading-container {
   width: 80%;
   margin-inline: auto;
@@ -46,7 +81,7 @@ body {
 
 .input-author,
 .input-title {
-  width: 60%;
+  width: 200px;
   display: block;
   margin-block: 0.5rem;
   margin-inline: auto;
@@ -61,33 +96,42 @@ input::placeholder {
 
 .input-author:hover,
 .input-title:hover {
-  transform: scale(1.1);
   border: 1.5px;
   box-shadow: 0.2rem 0.2rem 0 #686a6b;
 }
 
 #btnAdd {
-  width: 30%;
+  width: 70px;
   display: block;
   margin-inline: auto;
   text-align: center;
   border: 2px solid black;
+  border-radius: 6px;
+  height: 2rem;
 }
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 .text {
   display: flex;
 }
 
+hr {
+  width: 60%;
+}
+
 .booklist {
+  width: 60%;
+  margin-inline: auto;
   display: flex;
   justify-content: space-between;
   padding: 0 20px 0 20px;
   align-items: center;
   background-color: rgb(241, 238, 238, 0.9);
+  color: rgba(83, 63, 63, 0.9);
 }
 
 .button {
@@ -107,4 +151,85 @@ ul {
   font-size: 20px;
   display: flex;
   justify-content: center;
+}
+
+.b-tab {
+  display: none;
+}
+
+.b-tab.active-tab {
+  display: block;
+}
+
+a.active-tab {
+  background-color: rgb(241, 238, 238);
+  color: palevioletred;
+}
+
+.date {
+  width: 90%;
+  margin: 1% auto;
+  text-align: right;
+  font-size: 1.1rem;
+  color: rgb(241, 238, 238);
+  font-weight: 800;
+}
+
+footer {
+  width: 80%;
+  margin-inline: auto;
+  text-align: center;
+  color: rgb(241, 238, 238);
+  font-weight: 800;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    color: rgb(241, 238, 238);
+    font-size: 1.5rem;
+  }
+
+  .nav-section {
+    padding-inline: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: palevioletred;
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: unset;
+    position: unset;
+    background-color: transparent;
+  }
+
+  .nav-list {
+    color: rgb(241, 238, 238);
+    text-decoration: none;
+    margin-inline: 20px;
+    display: block;
+    padding: 5px 8px;
+  }
+
+  .nav-list:hover {
+    text-decoration: underline;
+    padding: 5px 8px;
+    background-color: rgb(241, 238, 238);
+    color: palevioletred;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .fa-bars {
+    display: none;
+  }
+
+  .heading-container {
+    margin-top: 7.5%;
+  }
 }
