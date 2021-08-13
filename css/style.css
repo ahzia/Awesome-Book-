@@ -7,6 +7,13 @@ body {
   background-size: 100vw 1020px;
 }
 
+.section {
+  margin-inline: auto;
+  text-align: center;
+  color: rgb(241, 238, 238);
+  font-weight: 800;
+}
+
 h1 {
   color: rgb(241, 238, 238);
   font-size: 1.5rem;
@@ -124,6 +131,7 @@ hr {
   padding: 0 20px 0 20px;
   align-items: center;
   background-color: rgb(241, 238, 238, 0.9);
+  color: rgba(83, 63, 63, 0.9);;
 }
 
 .button {
@@ -164,13 +172,6 @@ a.active-tab {
 
 footer {
   width: 80%;
-  margin-inline: auto;
-  text-align: center;
-  color: rgb(241, 238, 238);
-  font-weight: 800;
-}
-
-.section {
   margin-inline: auto;
   text-align: center;
   color: rgb(241, 238, 238);
